@@ -3,16 +3,33 @@
 	const absolutePath = siteUrl;
 
 	let pageTitle = 'Index',
-	features = [
-		{title: 'Feature', descr: 'Simple text'},
-	],
 	socLinks = [
-		{icon: 'fb', label: 'Facebook', link: '#'},
-		{icon: 'ins', label: 'Instagram', link: '#'},
-		{icon: 'vk', label: 'Вконтакте', link: '#'},
+		{icon: 'tw', label: 'Twitter', link: 'https://twitter.com/welltory'},
+		{icon: 'fb', label: 'Facebook', link: 'https://www.facebook.com/welltory'},
+		{icon: 'ins', label: 'Instagram', link: 'https://www.instagram.com/welltory/'},
+		{icon: 'li', label: 'LinkedIn', link: 'https://www.linkedin.com/company/welltory'},
 	],
 	css = {
 	},
+	tariffs = [
+		{title: 'Monthly', price: '$ 5.99', oldPrice: '$ 7.99', discount: '– 15%', caption: 'Billed every month'},
+		{title: 'Annualy', price: '$ 4.99', oldPrice: '$ 5.99', discount: '– 25%', caption: '$79 billed once a year', checked: true},
+	],
+	plansTable = [
+		'Feel better fast',
+		{descr: 'Personalized research papers: see how your lifestyle affects your health and what you can do about it', free: false, pro: true},
+		{descr: 'Recommendations: get science-backed tips to beat insomnia, cure a hangover, support a panic attack, clear a headache, or get blood pressure under control', free: false, pro: true},
+		{descr: 'Personalized move goals: your heartbeat and daily steps data will steer you toward better health — effortlessly', free: false, pro: true},
+		{descr: 'Breathing practices: focus or unwind with scientifically-proven guided practices', free: true, pro: true},
+		{descr: "Yesterday's movereport: see if you’re doing enough to support your health", free: true, pro: true},
+		'Gain rich health insights',
+		{descr: 'Detailed heartbeat analytics: access stress, energy, and focus scores, metrics and charts — check in on how your body is doing and spot any changes', free: false, pro: true},
+		{descr: 'In-depth blood pressure analysis: input your numbers and we’ll provide five extra indexes, give detailed interpretations, and alert you if something doesn’t look right', free: false, pro: true},
+		{descr: 'Blood pressure reports: send your data to your doctor or print out neat reports with all your readings', free: false, pro: true},
+		{descr: 'Basic heartbeat analytics: just your stress, energy, and focus scores — no extra metrics', free: true, pro: true},
+		{descr: 'Basic blood pressure analysis: we’ll interpret your top and bottom numbers — without extra indexes ', free: true, pro: true},
+		{descr: 'Yesterday’s heart report sent to your feed daily: note the relationship between your activities and any changes to your heart rate', free: true, pro: true},
+	],
 	images = {
 		logo: {src: absolutePath + '/data/190226/2136184881629692.jpg', alt: 'logo'},
 	};
