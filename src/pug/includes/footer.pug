@@ -1,2 +1,20 @@
-footer
-	p &copy; copyright
+footer.wrapper.Pb15su.Txa
+	.Maw-lg0.md_D-g.Gap8su
+		section.Mb8su
+			.-D-mf.Ai-c.sm_Flw-n.Mb5su_-btc.Ml5su_-btc
+				h2.W100p.sm_W-a.Fns4su.Fw400.O70p Get the mobile app
+				a.Ct-iApple_bf(href='https://itunes.apple.com/app/welltory-personal-nyj-analitik/id1074367771?mt=8' target='blank')
+					span.-D-vh Apple Store
+				a.Ct-iGplay_bf(href='https://play.google.com/store/apps/details?id=com.welltory.client.android' target='blank')
+					span.-D-vh Google Play
+		section.Mb7su
+			h2.-D-vh Resources
+			ul.D-f.-All-sr.Ml5su_-btc.Pl5su_-btc.Bdl_-btc
+				li: a.C-ih.O50p.O1_h.Txd.Txd-u_h(href='https://welltory.com/privacy/') Terms of use
+				li: a.C-ih.O50p.O1_h.Txd.Txd-u_h(href='https://welltory.com/terms/') Privacy policy
+		section
+			h2.-D-vh Social
+			ul.D-f.Ml5su_-btc.-All-sr
+				each item, i in socLinks
+					li
+						a.C-ih.O50p.O1_h(class=`Ct-i${item.icon}_bf` href=item.link target='blank'): span.-D-vh= item.label
