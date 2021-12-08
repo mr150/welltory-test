@@ -1,0 +1,5 @@
+mixin planCell(checked)
+	- const answer = checked ? 'yes' : 'no'
+
+	td.plan-cell(class='plan-cell--' + answer)
+		.-D-vh= answer

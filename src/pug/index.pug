@@ -1,15 +1,60 @@
-include includes/vars.pug
+include tools/vars.pug
+include tools/mixins.pug
 
 doctype html
 html(lang="ru")
 	head
 		- pageTitle = 'Welltory pro';
 		include includes/head.pug
-	body.M0.H100p
+	body.H100p.Bgc-black0.C-white
 		include includes/header.pug
-		main
-			.wrapper
-				h1.Fw1gg Simple text
+		main.wrapper.Mxw-sm0.Txa
+			h1.-D-vh Welltory pro
+			picture.D-n.sm_D.Mb5su
+				source(srcset='img/pro-logo.png, img/pro-logo@2x.png 2x', type='image/webp')
+				img(src='img/pro-logo.png' aria-hidden='true' srcset='img/pro-logo.png, img/pro-logo@2x.png 2x' alt='Welltory pro')
+			strong.D.Mb10su.lg_Mb12su.Fns7su.lg_Fns9su.Fnw400 Take better care of yourself every day
+			section.Mb12su.md_Mb22su
+				h2.-D-vh Choose the tariff
+				form(action='#')
+					.sm_D-g.Gtc-t2.Gap5su.Mb6su
+						each item, i in tariffs
+							.Ps
+								input.Ps-a.O0(id='tariff' + i type='radio' checked=item.checked)
+								label.D-g.Gtc-t2.Gap5su.-Px8su.-Py6su.Bgc-blue1.Bdrd1su(class='Bd1;n c:+_Bdi-gdMain/1' for='tariff' + i)
+									span.D
+										span(class='D Mb2su md_Mb4gg Fnw400 Fns5.5su')= item.title
+										span(class='Fns3su O50p')= item.caption
+									span.D.Txa-r
+										span.D.Fns3su.C-blue0.Mb2su= item.price
+										span.-D-vh Old price: 
+										s.O50p= item.oldPrice
+									span.Ps-a.T0.L0.Ml7su.Txa.C-white.Fns5su.Bdrd-ih.Bdtlr0(class='P3su;6su;2su')
+					button.W100p.Mb3su(class=css.btn) continue
+					small.D.Fns3su.050p No commitments. Cancel anytime
+			section.Mb33su
+				h2.Mb12su(class='Fns5.5su Fnw400') Choose the tariff
+				table(class='-Py4su_:td:![colspan] Bdcl Mb20su md_Mb15su')
+					tr
+						th(class=css.planTh) What you get
+						th(class=css.planTh)
+							span.md_D-i for
+							| Free
+						th.Bdb.Bdw1su.Bgcl(class=css.planTh.replace('Bdc-white*70p', 'Bgi-gdMain'))
+							span.md_D-i in
+							| Pro
+					each item, i in plansTable
+						if typeof(item) === 'object'
+							tr(class='Bdb_!lc Bdc-white*20p')
+								td= item.descr
+								+planCell(item.free)
+								+planCell(item.pro)
+						else
+							tr
+								td(class='-Py9su Fns5su Bgcl Bgi-gdMain' colspan='3')= item
+				.sm_D-g.Gtc-t2.Gap5su
+					button.W100p.Maw-xs0(class=css.btnAct) upgrade now
+					a.W100p.Maw-xs0.Pne(class=css.btnLimpid href='#') go with the free version
 
 		include includes/footer.pug
-		script(src="js/scripts.min.js")
+		script(src='js/scripts.min.js')
