@@ -152,7 +152,6 @@
 		"selector-max-type": 1,
 		"selector-no-qualifying-type": true,
 		"string-quotes": "single",
-		"string-no-newline": true,
 		"unit-case": "lower",
 		"value-list-comma-newline-after": "always-multi-line",
 		"value-list-comma-newline-before": "never-multi-line",

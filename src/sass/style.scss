@@ -1,4 +1,60 @@
 @charset 'utf-8';
 
 @use 'includes/fonts';
-@use 'mlut' as ml;
+@use 'mlut' as ml with(
+	$wrapper-max-width: 1280px,
+	$utils-data: (
+		'utils': (
+			'registry': (
+				'Bdi': (
+					'properties': border-image,
+					'keywords': 'gradients',
+					'multi-list-separator': '/',
+				),
+			),
+			'keywords': (
+				'gradients': (
+					'gdMain': linear-gradient(90deg, #89a3ff 0%, #ff6060 54%, #ffbf00),
+				),
+			),
+		)
+	),
+	$utils: (
+		'Colors': (
+			'black0': #151a22,
+			'white': #fff,
+			'blue0': #89a3ff,
+			'blue1': rgba(#333B4A, 20%),
+			'green0': #52b692,
+			'yellow0': #efdd36,
+			'red0': #ff6060,
+		),
+		'Colors_h': (['white*80', 7, ('alpha': 0.1)],),
+		'Fns': (9su, 7su, 5.5su, 3su),
+		'Mxw': (
+			'sm0': 692px,
+			'xs0': 340px,
+			'lg0': 1034px,
+		),
+		'Gap': (5su, 8su),
+		'Mb': (22su, 10su, 12su, 33su, 20su, 'md_15su'),
+		'O': ([20p, 80, 10],),
+		'Ct_bf StOl': (
+			'iTw': url('img/tw.png'),
+			'iFb': url('img/fb.png'),
+			'iIns': url('img/ins.png'),
+			'iLi': url('img/li.png'),
+		),
+	),
+);
+
+body {
+	font-family: 'Montserrat', ui-sans-serif, system-ui, -apple-system, Arial, sans-serif;
+}
+
+@include ml.apply(
+	'-Px8su -Py6su -Py9su O50p Bdrd-ih Bdtlr0 Bdb_!lc Pb15su \
+P3su;6su;2su -Py4su_:td:![colspan] Txd-u_h C-ih Bgi-gdMain'
+);
+
+@include ml.apply('c:+ _Bdi-gdMain/1', (), true);
