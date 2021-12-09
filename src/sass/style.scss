@@ -43,23 +43,23 @@
 @use 'mlut/src/core' with (
 	$utils: (
 		'Colors': (
-			'KW.colors', 'tp', ['white*80', 7, ('alpha': 0.1)],
+			'KW.colors', 'tp', ['white*80p', 7, ('alpha': 0.1)],
 		),
 		'BpAll_Fns': (9su, 7su, 5su, 5.5su, 4su, 3su),
 		'Mxw': (
 			'xs0': 340px,
-			'sm0': 766px,
+			'sm0': 728px,
 			'lg0': 1034px,
 		),
 		'Gap': (5su, 8su),
-		'BpAll_Mb': (22su, 7su, 10su, 12su, 33su, 20su, 15su),
-		'O': ([20p, 80, 10],),
+		'BpAll_Mb': (22su, 7su, 8su, 10su, 12su, 33su, 20su, 15su),
+		'O': ([20p, 80, 10], '1_h'),
 		'Bdrd': (1su, 'ih'),
-		'Ct_bf StOl': (
-			'iTw': url('img/tw.png'),
-			'iFb': url('img/fb.png'),
-			'iIns': url('img/ins.png'),
-			'iLi': url('img/li.png'),
+		'Ct_b StOl': (
+			'iTw': url('../img/tw.png'),
+			'iFb': url('../img/fb.png'),
+			'iIns': url('../img/ins.png'),
+			'iLi': url('../img/li.png'),
 		),
 	),
 );
@@ -68,8 +68,8 @@
 	'-Px8su -Py6su -Py9su Bdtlr0 Bdb-;white*20p_!lc Pb15su -S105p_h Bd-;tp T-6 L7su \
 P3su;6su;2su P16su;8su;6su -Py4su_:td:![colspan] Txd-u_h C-ih Bgi-gdMain \
 Bgi-gdMain_b Ps-a_b -I-1_b Zi-1_b -Ts_b O0_b Bdrd-ih_b Bgc-blue2_h D-n \
-D_af -Mx2su_af Mt4su_af Pt9su Bd-;white*30p md_Gtc2fr;1fr \
-Mr2su_af H1_af Bgc-white_af O70p_af H1su_af Bgi-gdMain_af'
+D_af -Mx2su_af Mt4su_af Pt9su Bd-;white*30p md_Gtc2fr;1fr Bdl-;white*50p_-btc \
+Mr2su_af H1_af Bgc-white_af O70p_af H1su_af Bgi-gdMain_af Pl5su_-btc Tf-n_a'
 );
 
 /*! purgecss start ignore */
