@@ -93,6 +93,14 @@ ftpConfig = {
 	parallel: 10
 };
 
+const purgeCssConfig = {
+	content: [
+		dirs.src + files.html,
+		path.src.js + files.js,
+	],
+	defaultExtractor: content => content.match(/[a-zA-Z0-9\-_:;.,*+!\[\]\/]+/g) || [],
+};
+
 gulp.task('css-lint', function(){
 	return gulp.src([
 		path.src.fonts + '*.css',
@@ -123,12 +131,7 @@ gulp.task('style', gulp.series('css-lint', function(){
 			flexbox: false
 		}))
 		.pipe(gulp.dest(path.src.css))
-		.pipe(purgecss({
-			content: [
-				dirs.src + files.html,
-				path.src.js + files.js
-			]
-		}))
+		.pipe(purgecss(purgeCssConfig))
 		.pipe(csso({
 			forceMediaMerge: true
 		}))
@@ -145,12 +148,7 @@ gulp.task('css-update', function(){
 		path.src.css + '*.css',
 		'!' + path.src.css + '*.min.css'
 	])
-		.pipe(purgecss({
-			content: [
-				dirs.src + files.html,
-				path.src.js + files.js
-			]
-		}))
+		.pipe(purgecss(purgeCssConfig))
 		.pipe(csso({
 			forceMediaMerge: true
 		}))
@@ -252,7 +250,7 @@ gulp.task('pngmin', function(){
 		.pipe(imagemin([
 			imagemin.optipng({optimizationLevel: 3}),
 			pngquant({
-				quality: [0.96, 1],
+        quality: [0.9, 0.95],
 				speed: 3,
 				strip: true
 			}),
