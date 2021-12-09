@@ -75,6 +75,6 @@ Mr2su_af H1_af Bgc-white_af O70p_af H1su_af Bgi-gdMain_af Pl5su_-btc Tf-n_a \
 
 /*! purgecss start ignore */
 @include ml.apply(
-	('c:+ _O1_b', 'c:+* _O1', 'c:+* _C-yellow0', 'c:+* _Bgc-yellow0', 'c:+* _C-black0'), (), true
+	':c:+_O1_b :c:+*_O1 :c:+*_C-yellow0 :c:+*_Bgc-yellow0 :c:+*_C-black0'
 );
 /*! purgecss end ignore */
