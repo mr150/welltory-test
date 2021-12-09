@@ -40,7 +40,7 @@ html(lang="ru")
 						th.W20p(class=css.planTh)
 							span.D-n.md_D-i for 
 							| Free
-						th.W20p.Bdw1su.Bgcl-t(class=css.planTh.replace('H1_af Bgc-white_af', 'H1su_af Bgi-gdMain_af C-tp Bgi-gdMain'))
+						th.W20p.Bdw1su.Bgcl-t(class=css.planTh.replace('H1_af Bgc-white_af', 'H1su_af Bgi-gdMain_af @s_C-tp @s:t0_Bgi-gdMain'))
 							span.D-n.md_D-i in 
 							| Pro
 					each item, i in plansTable
@@ -51,7 +51,7 @@ html(lang="ru")
 								+planCell(item.pro)
 						else
 							tr
-								td(class='Pt9su Pb5su Fns5su Bgcl-t C-tp Bgi-gdMain' colspan='3')= item
+								td(class='Pt9su Pb5su Fns5su Bgcl-t @s_C-tp @s:t0_Bgi-gdMain' colspan='3')= item
 				.D-g.sm_Gtc-t2.Gap7su.Jc-c
 					button.W100p.Mxw-xs0.sm_Od1(class=css.btnAct form='tariff-form') upgrade now
 					a.W100p.Mxw-xs0(class=css.btnLimpid href='#') go with the free version

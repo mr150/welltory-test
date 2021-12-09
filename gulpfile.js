@@ -98,7 +98,7 @@ const purgeCssConfig = {
 		dirs.src + files.html,
 		path.src.js + files.js,
 	],
-	defaultExtractor: content => content.match(/[a-zA-Z0-9\-_:;.,*+!\[\]\/]+/g) || [],
+	defaultExtractor: content => content.match(/[a-zA-Z0-9\-_:;.@,*+!\[\]\/]+/g) || [],
 };
 
 gulp.task('css-lint', function(){
