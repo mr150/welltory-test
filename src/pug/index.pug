@@ -20,7 +20,7 @@ html(lang="ru")
 					.D-g.sm_Gtc-t2.Gap5su.Mb6su
 						each item, i in tariffs
 							.Ps.D-f
-								input.Ps-a.O0(id='tariff' + i type='radio' name='tariff' checked=item.checked)
+								input.Ps-a.O0(id='tariff' + i type='radio' name='tariff' value=item.value checked=item.checked)
 								label.D-g.W100p.Gtc-t2.Gap5su.Bgc-blue1.Bdrd1su.-Ts(class='md_Gtc2fr;1fr P16su;8su;6su Bgc-blue2_h Bgi-gdMain_b Ps-a_b -I-1_b Zi-1_b Bdrd-ih_b Ct_b -Ts_b O0_b c:+_O1_b' for='tariff' + i)
 									span.D.Txa-l
 										span(class='D Mb2su md_Mb4gg Lh1 Fns5.5su')= item.title
@@ -53,7 +53,7 @@ html(lang="ru")
 							tr
 								td(class='Pt9su Pb5su Fns5su Bgcl-t C-tp Bgi-gdMain' colspan='3')= item
 				.D-g.sm_Gtc-t2.Gap7su.Jc-c
-					button.W100p.Mxw-xs0(class=css.btnAct form='tariff-form') upgrade now
+					button.W100p.Mxw-xs0.sm_Od1(class=css.btnAct form='tariff-form') upgrade now
 					a.W100p.Mxw-xs0(class=css.btnLimpid href='#') go with the free version
 
 		include includes/footer.pug

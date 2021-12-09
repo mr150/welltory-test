@@ -1,7 +1,7 @@
 -
 	const siteUrl = '';
 	const absolutePath = siteUrl,
-				btnBase = 'btn P4su Fns5su Lnh1 Bgc-tp Bdrd1su -Ts Tf -S105p_h';
+				btnBase = 'btn P4su Fns5su Lnh1 Bgc-tp Bdrd1su -Ts Tf Tf-n_a -S105p_h';
 
 	let pageTitle = 'Index',
 	socLinks = [
@@ -13,11 +13,11 @@
 	css = {
 		btnAct: btnBase + ' C-black0 Bgi-gdMain Bgc-red0',
 		btnLimpid: btnBase + ' C-white Bd-;white*30p',
-		planTh: 'Fns5su sm_Fns5.5su Fnw400 Ct_af D_af Mt4su_af -Mx2su_af H1_af Bgc-white_af O70p_af',
+		planTh: 'Fns5su Lnh1 sm_Fns5.5su Fnw400 Ct_af D_af Mt4su_af -Mx2su_af H1_af Bgc-white_af O70p_af',
 	},
 	tariffs = [
-		{title: 'Monthly', price: '$ 5.99', oldPrice: '$ 7.99', discount: '– 15%', caption: 'Billed every month'},
-		{title: 'Annualy', price: '$ 4.99', oldPrice: '$ 5.99', discount: '– 25%', caption: '$79 billed once a year', checked: true},
+		{title: 'Monthly', value: 'monthly', price: '$ 5.99', oldPrice: '$ 7.99', discount: '– 15%', caption: 'Billed every month'},
+		{title: 'Annualy', value: 'annualy', price: '$ 4.99', oldPrice: '$ 5.99', discount: '– 25%', caption: '$79 billed once a year', checked: true},
 	],
 	plansTable = [
 		'Feel better fast',
@@ -33,7 +33,4 @@
 		{descr: 'Basic heartbeat analytics: just your stress, energy, and focus scores — no extra metrics', free: true, pro: true},
 		{descr: 'Basic blood pressure analysis: we’ll interpret your top and bottom numbers — without extra indexes ', free: true, pro: true},
 		{descr: 'Yesterday’s heart report sent to your feed daily: note the relationship between your activities and any changes to your heart rate', free: true, pro: true},
-	],
-	images = {
-		logo: {src: absolutePath + '/data/190226/2136184881629692.jpg', alt: 'logo'},
-	};
+	];

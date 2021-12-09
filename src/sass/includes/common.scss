@@ -3,7 +3,7 @@
 body {
 	font-family: 'Montserrat', ui-sans-serif, system-ui, -apple-system, Arial, sans-serif;
 
-	@include ml.bp(md) {
+	@include ml.bp(lg) {
 		background: url('../img/main-bg.png') no-repeat;
 		background-size: 100%;
 	}
