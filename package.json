@@ -39,6 +39,7 @@
 		"vinyl-ftp": "^0.6.1"
 	},
 	"dependencies": {
-		"mlut": "^4.0.1"
+		"mlut": "^4.0.1",
+		"svg4everybody": "^2.1.9"
 	}
 }
