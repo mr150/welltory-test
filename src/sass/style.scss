@@ -1,8 +1,12 @@
 @charset 'utf-8';
 
-@use 'includes/fonts';
-@use 'mlut' as ml with(
+@use 'mlut/src/tools' as ml with (
 	$wrapper-max-width: 1280px,
+	$general-config: (
+		'generic-css': (
+			'svg-fill-cur-color': true,
+		),
+	),
 	$utils-data: (
 		'utils': (
 			'registry': (
@@ -22,20 +26,26 @@
 			),
 		)
 	),
+	$colors: (
+		'black0': #151a22,
+		'white': #fff,
+		'blue0': #89a3ff,
+		'blue1': #1b212a,
+		'blue2': #1f2733,
+		'green0': #52b692,
+		'yellow0': #efdd36,
+		'red0': #ff6060,
+	),
+);
+
+@use 'includes/fonts';
+@use 'includes/common';
+@use 'mlut/src/core' with (
 	$utils: (
 		'Colors': (
-			'black0': #151a22,
-			'white': #fff,
-			'blue0': #89a3ff,
-			'blue1': #1b212a,
-			'blue2': #1f2733,
-			'green0': #52b692,
-			'yellow0': #efdd36,
-			'red0': #ff6060,
-			'tp': null,
+			'KW.colors', 'tp', ['white*80', 7, ('alpha': 0.1)],
 		),
-		'Colors_h': (['white*80', 7, ('alpha': 0.1)],),
-		'BpAll_Fns': (9su, 7su, 5su, 5.5su, 3su),
+		'BpAll_Fns': (9su, 7su, 5su, 5.5su, 4su, 3su),
 		'Mxw': (
 			'xs0': 340px,
 			'sm0': 766px,
@@ -53,57 +63,6 @@
 		),
 	),
 );
-
-body {
-	font-family: 'Montserrat', ui-sans-serif, system-ui, -apple-system, Arial, sans-serif;
-
-	@include ml.bp(md) {
-		background: url('../img/main-bg.png') no-repeat;
-		background-size: 100%;
-	}
-}
-
-.decor-triangle::before {
-	position: absolute;
-	top: 0px;
-	left: -6px;
-	width: 0px;
-	height: 0px;
-	border-style: solid;
-	border-width: 0 0 6px 6px;
-	border-color: transparent transparent #89a3ff transparent;
-	opacity: 0.5;
-	content: '';
-
-	@at-root {
-		input:checked + * & {
-			border-color: transparent transparent #efdd36 transparent;
-		}
-	}
-}
-
-.plan-cell {
-	&::before {
-		display: block;
-		margin: 0px auto;
-		content: '';
-	}
-
-	&--no::before {
-		width: 20px;
-		height: 1px;
-		background: #fff;
-	}
-
-	&--yes::before {
-		width: 18px;
-		height: 10px;
-		background: transparent;
-		border-bottom: 1px solid #52b692;
-		border-left: 1px solid #52b692;
-		transform: rotate(-45deg);
-	}
-}
 
 @include ml.apply(
 	'-Px8su -Py6su -Py9su Bdtlr0 Bdb-;white*20p_!lc Pb15su -S105p_h Bd-;tp T-6 L7su \

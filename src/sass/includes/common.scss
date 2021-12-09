@@ -1,0 +1,52 @@
+@use 'mlut/src/tools' as ml;
+
+body {
+	font-family: 'Montserrat', ui-sans-serif, system-ui, -apple-system, Arial, sans-serif;
+
+	@include ml.bp(md) {
+		background: url('../img/main-bg.png') no-repeat;
+		background-size: 100%;
+	}
+}
+
+.decor-triangle::before {
+	position: absolute;
+	top: 0px;
+	left: -6px;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 0 0 6px 6px;
+	border-color: transparent transparent ml.uv('C-blue0') transparent;
+	opacity: 0.5;
+	content: '';
+
+	@at-root {
+		input:checked + * & {
+			border-color: transparent transparent ml.uv('C-yellow0') transparent;
+		}
+	}
+}
+
+.plan-cell {
+	&::before {
+		display: block;
+		margin: 0px auto;
+		content: '';
+	}
+
+	&--no::before {
+		width: 20px;
+		height: 1px;
+		background: #fff;
+	}
+
+	&--yes::before {
+		width: 18px;
+		height: 10px;
+		background: transparent;
+		border-bottom: 1px solid ml.uv('C-green0');
+		border-left: 1px solid ml.uv('C-green0');
+		transform: rotate(-45deg);
+	}
+}
