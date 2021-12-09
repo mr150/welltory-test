@@ -11,6 +11,9 @@
 					'keywords': 'gradients',
 					'multi-list-separator': '/',
 				),
+				'Bgi': (
+					'keywords': 'gradients',
+				),
 			),
 			'keywords': (
 				'gradients': (
@@ -24,21 +27,24 @@
 			'black0': #151a22,
 			'white': #fff,
 			'blue0': #89a3ff,
-			'blue1': rgba(#333B4A, 20%),
+			'blue1': #1b212a,
+			'blue2': #1f2733,
 			'green0': #52b692,
 			'yellow0': #efdd36,
 			'red0': #ff6060,
+			'tp': null,
 		),
 		'Colors_h': (['white*80', 7, ('alpha': 0.1)],),
-		'Fns': (9su, 7su, 5.5su, 3su),
+		'BpAll_Fns': (9su, 7su, 5su, 5.5su, 3su),
 		'Mxw': (
-			'sm0': 692px,
 			'xs0': 340px,
+			'sm0': 766px,
 			'lg0': 1034px,
 		),
 		'Gap': (5su, 8su),
-		'Mb': (22su, 10su, 12su, 33su, 20su, 'md_15su'),
+		'BpAll_Mb': (22su, 7su, 10su, 12su, 33su, 20su, 15su),
 		'O': ([20p, 80, 10],),
+		'Bdrd': (1su, 'ih'),
 		'Ct_bf StOl': (
 			'iTw': url('img/tw.png'),
 			'iFb': url('img/fb.png'),
@@ -50,11 +56,65 @@
 
 body {
 	font-family: 'Montserrat', ui-sans-serif, system-ui, -apple-system, Arial, sans-serif;
+
+	@include ml.bp(md) {
+		background: url('../img/main-bg.png') no-repeat;
+		background-size: 100%;
+	}
+}
+
+.decor-triangle::before {
+	position: absolute;
+	top: 0px;
+	left: -6px;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 0 0 6px 6px;
+	border-color: transparent transparent #89a3ff transparent;
+	opacity: 0.5;
+	content: '';
+
+	@at-root {
+		input:checked + * & {
+			border-color: transparent transparent #efdd36 transparent;
+		}
+	}
+}
+
+.plan-cell {
+	&::before {
+		display: block;
+		margin: 0px auto;
+		content: '';
+	}
+
+	&--no::before {
+		width: 20px;
+		height: 1px;
+		background: #fff;
+	}
+
+	&--yes::before {
+		width: 18px;
+		height: 10px;
+		background: transparent;
+		border-bottom: 1px solid #52b692;
+		border-left: 1px solid #52b692;
+		transform: rotate(-45deg);
+	}
 }
 
 @include ml.apply(
-	'-Px8su -Py6su -Py9su O50p Bdrd-ih Bdtlr0 Bdb_!lc Pb15su \
-P3su;6su;2su -Py4su_:td:![colspan] Txd-u_h C-ih Bgi-gdMain'
+	'-Px8su -Py6su -Py9su Bdtlr0 Bdb-;white*20p_!lc Pb15su -S105p_h Bd-;tp T-6 L7su \
+P3su;6su;2su P16su;8su;6su -Py4su_:td:![colspan] Txd-u_h C-ih Bgi-gdMain \
+Bgi-gdMain_b Ps-a_b -I-1_b Zi-1_b -Ts_b O0_b Bdrd-ih_b Bgc-blue2_h D-n \
+D_af -Mx2su_af Mt4su_af Pt9su Bd-;white*30p md_Gtc2fr;1fr \
+Mr2su_af H1_af Bgc-white_af O70p_af H1su_af Bgi-gdMain_af'
 );
 
-@include ml.apply('c:+ _Bdi-gdMain/1', (), true);
+/*! purgecss start ignore */
+@include ml.apply(
+	('c:+ _O1_b', 'c:+* _O1', 'c:+* _C-yellow0', 'c:+* _Bgc-yellow0', 'c:+* _C-black0'), (), true
+);
+/*! purgecss end ignore */
